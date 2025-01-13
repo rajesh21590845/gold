@@ -22,19 +22,19 @@
             width: 100%;
             height: 100%;
             margin: 0;
-            padding: 100px;;
+            padding: 0;
         }
 
         /* Navbar Styles */
         .navbar {
             display: flex;
-    flex-direction: column; /* Make the logo and menu stack vertically */
-    align-items: flex-start; /* Align logo and menu to the left */
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    z-index: 1000;
-    animation: fadeIn 1s forwards;
+            flex-direction: column; /* Make the logo and menu stack vertically */
+            align-items: flex-start; /* Align logo and menu to the left */
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            z-index: 1000;
+            animation: fadeIn 1s forwards;
         }
 
         @keyframes fadeIn {
@@ -151,19 +151,12 @@
             transform: scale(1.1);
         }
 
-                /* Services Section */
-                .services {
+        /* Services Section */
+        .services {
             padding: 4rem 2rem;
             background: #010101;
             text-align: center;
         }
-
-        /* Scroll Animation for Service Cards */
-.service-card {
-    opacity: 0; /* Initially hidden */
-    transform: translateY(50px); /* Start below */
-    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth animation */
-}
 
         .services .section-title {
             font-size: 2.5rem;
@@ -252,27 +245,6 @@
             color: #bbb;
         }
 
-        .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.slider-image {
-    position: absolute;
-    width: 60%;
-    height: 60%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slider-image.active {
-    opacity: 1;
-}
-
         /* About Us Section */
         .about {
             padding: 4rem 2rem;
@@ -346,14 +318,13 @@
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column; /* Stack logo and menu vertically */
-        align-items: flex-start; /* Left-align the items */
-        padding: 1rem; /* Reduce padding */
+                align-items: flex-start; /* Left-align the items */
+                padding: 1rem; /* Reduce padding */
             }
 
             .menu-toggle {
-                
                 display: block;
-        margin-bottom: 1rem; /* Space between toggle and the menu */
+                margin-bottom: 1rem; /* Space between toggle and the menu */
             }
 
             .navbar .nav-links {
@@ -393,6 +364,15 @@
             .contact {
                 padding: 3rem 1rem;
             }
+
+            .services .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                max-width: 100%;
+                margin-bottom: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -409,7 +389,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="gallery.html">gallery</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -478,7 +458,6 @@
         <p><center>&copy; 2025 SHREE VENKATESHWARA ENGINEERING WORKS. All Rights Reserved.</center></p>
     </footer>
     
-
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
@@ -501,7 +480,6 @@
     // Change images every 3 seconds
     setInterval(showNextImage, 3000);
 });
-
     </script>
 
 </body>
