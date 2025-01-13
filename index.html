@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHREE VENKATESHWARA ENGINEERING WORKS</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Oswald:wght@200;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #010101;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 100px;;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            animation: slideIn 1s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .navbar .logo img {
+            height: 150px;
+            margin-right: 10px;
+        }
+
+        .navbar .logo span {
+            font-size: 2rem;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #4caeff;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            padding: 0 1rem;
+        }
+
+        .hero-video {
+            width: 60%;
+            height: 400px;
+            margin-right: 2rem;
+        }
+
+        .hero-text {
+            max-width: 500px;
+            text-align: left;
+            opacity: 0;
+            animation: fadeInHero 1.5s forwards;
+        }
+
+        @keyframes fadeInHero {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .hero-text p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .hero-text .btn {
+            padding: 0.8rem 1.5rem;
+            background: #33c983;
+            color: #333;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            
+        }
+
+        .hero-text .btn:hover {
+            background: #5ef535;
+            transform: scale(1.1);
+        }
+
+                /* Services Section */
+                .services {
+            padding: 4rem 2rem;
+            background: #010101;
+            text-align: center;
+        }
+
+        /* Scroll Animation for Service Cards */
+.service-card {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start below */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth animation */
+}
+
+        .services .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .services .section-title::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background: #4caeff;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .service-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .service-card {
+            background: #1c1c1c;
+            color: #fff;
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.4s, box-shadow 0.4s;
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.2s; }
+        .service-card:nth-child(2) { animation-delay: 0.4s; }
+        .service-card:nth-child(3) { animation-delay: 0.6s; }
+        .service-card:nth-child(4) { animation-delay: 0.8s; }
+        .service-card:nth-child(5) { animation-delay: 1s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4caeff;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #bbb;
+        }
+
+        .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider-image {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider-image.active {
+    opacity: 1;
+}
+
+        /* About Us Section */
+        .about {
+            padding: 4rem 2rem;
+            background: #121212;
+            color: white;
+            text-align: center;
+        }
+
+        .about .section-title {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background: #010101;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: #222;
+            color: white;
+        }
+
+        .contact-form button {
+            background: #33c983;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #ffc107;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+                padding: 1rem 0;
+                background: #2a2f34;
+            }
+
+            .navbar .nav-links.active {
+                display: flex;
+            }
+
+            .navbar .logo img {
+                height: 120px;
+            }
+
+            .hero-video {
+                width: 100%;
+                height: 300px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .about {
+                padding: 3rem 1rem;
+            }
+
+            .contact {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/logo1.png" alt="Logo">
+                <span>SHREE VENKATESHWARA ENGINEERING WORKS</span>
+            </div>
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#gallery">gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Video -->
+    <div class="hero-container">
+        <div class="hero-video">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Za0t2Rfjewg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="hero-text">
+            <h1>WELCOME TO SHREE VENKATESHWARA ENGINEERING WORKS</h1>
+            <p>Transforming ideas into reality with precision and skill.</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </div>
+    </div>
+
+    <section id="services" class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <img src="assets/service1.jpg" alt="Shaping">
+                <h3>Shaping</h3>
+                <p>High-precision shaping services for various materials.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/service2.jpg" alt="Welding">
+                <h3>Welding</h3>
+                <p>Expert welding solutions for all types of structures.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/service3.jpg" alt="Injection Moulding">
+                <h3>Injection Moulding</h3>
+                <p>Efficient and accurate injection moulding processes.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/service4.jpg" alt="Moulding Die Making">
+                <h3>Moulding Die Making</h3>
+                <p>Custom die making for all your moulding needs.</p>
+            </div>
+            <div class="service-card">
+                <img src="assets/service5.jpeg" alt="Lathe Working">
+                <h3>Lathe Working</h3>
+                <p>Versatile lathe working for a variety of applications.</p>
+            </div>
+        </div>
+    </section>
+    <section id="gallery" class="gallery">
+        <div class="slider">
+            <img src="assets/1.jpg"  class="active">
+            <img src="assets/2.jpg" >
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title">About Us</h2>
+        <p>
+            SHREE VENKATESHWARA ENGINEERING WORKS has been a pioneer in delivering top-notch engineering solutions since its inception. With a dedicated team of professionals, we specialize in a variety of services including shaping, welding, moulding, and die making. Our commitment to precision and quality has made us a trusted name in the industry.
+        </p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p><center>&copy; 2025 SHREE VENKATESHWARA ENGINEERING WORKS. All Rights Reserved.</center></p>
+    </footer>
+    
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.slider-image');
+    let currentIndex = 0;
+
+    function showNextImage() {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+    }
+
+    // Initialize the first image as active
+    images[currentIndex].classList.add('active');
+
+    // Change images every 3 seconds
+    setInterval(showNextImage, 3000);
+});
+
+    </script>
+
+</body>
+</html>
