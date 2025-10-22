@@ -1,0 +1,12 @@
+# robots.txt for SHREE VENKATESHWARA ENGINEERING WORKS
+
+User-agent: *
+Allow: /
+
+# Block unnecessary system or private folders
+Disallow: /admin/
+Disallow: /uploads/
+Disallow: /tmp/
+
+# Sitemap location
+Sitemap: https://www.shreevenkateshwaraengineeringworks.com/sitemap.xml

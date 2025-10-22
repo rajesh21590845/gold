@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.shreevenkateshwaraengineeringworks.com/</loc>
+    <lastmod>2025-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.shreevenkateshwaraengineeringworks.com/assets/logo1.png</image:loc>
+      <image:caption>SHREE VENKATESHWARA ENGINEERING WORKS Logo</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.shreevenkateshwaraengineeringworks.com/services.html</loc>
+    <lastmod>2025-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.shreevenkateshwaraengineeringworks.com/about.html</loc>
+    <lastmod>2025-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.shreevenkateshwaraengineeringworks.com/contact.html</loc>
+    <lastmod>2025-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Gallery Page (if available) -->
+  <url>
+    <loc>https://www.shreevenkateshwaraengineeringworks.com/gallery.html</loc>
+    <lastmod>2025-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
